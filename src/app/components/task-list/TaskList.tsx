@@ -13,14 +13,17 @@ export const TaskList = ({ tasks, onComplete, onRemove }: TaskListProps) => {
 
   return (
     <div className="mt-4">
-      <h2 className="text-lg font-semibold">Active tasks</h2>
+      <h2 className="text-lg font-semibold mb-2">Active tasks</h2>
       <ul className="flex flex-col gap-3">
         {activeTasks.map(
           (
             task,
             index // Mapping through active tasks
           ) => (
-            <li key={index} className="flex justify-between items-center">
+            <li
+              key={index}
+              className="flex justify-between items-center bg-[#1E1727] px-3 py-2 rounded-xl"
+            >
               <div className="flex items-center">
                 <span>{task.text}</span>
               </div>
@@ -58,10 +61,13 @@ export const TaskList = ({ tasks, onComplete, onRemove }: TaskListProps) => {
 
       {completedTasks.length > 0 && (
         <>
-          <h2 className="text-lg font-semibold mt-4">Completed tasks</h2>
+          <h2 className="text-lg font-semibold mt-4 mb-2">Completed tasks</h2>
           <ul className="flex flex-col gap-3">
             {completedTasks.map((task, index) => (
-              <li key={index} className="flex justify-between items-center">
+              <li
+                key={index}
+                className="flex justify-between items-center bg-[#1E1727] px-3 py-2 rounded-xl"
+              >
                 <div className="flex items-center">
                   <span className="line-through text-[#9E78CF]">
                     {task.text}
