@@ -73,16 +73,14 @@ export const ToDoList = () => {
   return (
     <div className="max-w-md mx-auto p-4">
       <h1 className="text-2xl mb-4">Task List</h1>
-      <InputField
-        value={taskInput}
-        onChange={handleInputChange}
-        placeholder="Add a new task"
-      />
-      <AddTaskButton
-        onAddTask={handleAddTask}
-        text="Add task"
-        className="mt-2"
-      />
+      <div className="flex gap-2 justify-between align-middle">
+        <InputField
+          value={taskInput}
+          onChange={handleInputChange}
+          placeholder="Add a new task"
+        />
+        <AddTaskButton onAddTask={handleAddTask} text="Add" />
+      </div>
 
       {suggestionsLoading ? (
         <Loader />
