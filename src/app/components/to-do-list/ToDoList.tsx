@@ -76,7 +76,7 @@ export const ToDoList = () => {
       <InputField
         value={taskInput}
         onChange={handleInputChange}
-        placeholder="Додати нове завдання"
+        placeholder="Add a new task"
       />
       <AddTaskButton
         onAddTask={handleAddTask}
