@@ -1,4 +1,5 @@
-import { ToDoList } from "./components/to-do-list/ToDoList";
+import { ToDoList } from "@/components/to-do-list";
+
 export default function Home() {
   return (
     <div>

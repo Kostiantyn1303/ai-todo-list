@@ -3,6 +3,7 @@ type InputProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
 };
+
 export const InputField = ({ value, onChange, placeholder }: InputProps) => {
   return (
     <input

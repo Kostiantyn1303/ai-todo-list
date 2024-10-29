@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const useSuggestions = (taskInput: string) => {
   const fetchSuggestions = async (): Promise<string[]> => {
@@ -22,6 +22,7 @@ export const useSuggestions = (taskInput: string) => {
     queryKey: ["suggestions", taskInput],
     queryFn: fetchSuggestions,
     enabled: false,
+    placeholderData: keepPreviousData,
   });
 
   return { suggestions, refetch, isLoading, isError, error };

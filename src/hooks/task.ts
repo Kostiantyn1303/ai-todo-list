@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Task } from "../types/common";
-import { loadTasks, saveTasks } from "../utils/storage";
+import { Task } from "@/types/common";
+import { loadTasks, saveTasks } from "@/lib/storage";
 
 export const useTasks = () => {
   const queryClient = useQueryClient();

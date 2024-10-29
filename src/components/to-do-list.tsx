@@ -1,14 +1,12 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { InputField } from "../input-field/InputField";
-import { TaskList } from "../task-list/TaskList";
-import { useTasks } from "../../hooks/useTask";
-import { useSuggestions } from "../../hooks/useSuggestions";
-import { SuggestionsList } from "../suggestions-list/SuggestionsList";
-import { AddTaskButton } from "../button/Button";
+import { InputField, AddTaskButton, Loader } from "@/components/ui";
+import { TaskList } from "@/components/task-list";
+import { useTasks } from "@/hooks/task";
+import { useSuggestions } from "@/hooks/suggestions";
+import { SuggestionsList } from "@/components/suggestions-list";
 import debounce from "lodash.debounce";
-import { Loader } from "../loader/Loader";
 
 export const ToDoList = () => {
   const [taskInput, setTaskInput] = useState("");
@@ -34,9 +32,9 @@ export const ToDoList = () => {
   // Debounced function to fetch suggestions after the user stops typing
   const debouncedRefetch = useCallback(
     debounce((input: string) => {
-      if (input.length > 1) {
-        refetch(); // Call refetch if input length is greater than 1
-      }
+      // if (input.length > 1) {
+      refetch(); // Call refetch if input length is greater than 1
+      // }
     }, 300),
     [refetch]
   );

@@ -1,5 +1,5 @@
 import { NextResponse, NextRequest } from "next/server";
-import mockSuggestions from "@/app/utils/mock";
+import mockSuggestions from "./mock";
 
 export async function GET(request: NextRequest) {
   try {
@@ -7,10 +7,7 @@ export async function GET(request: NextRequest) {
     const taskDescription = searchParams.get("task");
 
     if (taskDescription === null || taskDescription.trim() === "") {
-      return NextResponse.json(
-        { error: "Task description cannot be empty." },
-        { status: 400 }
-      );
+      return NextResponse.json({ suggestions: [] }, { status: 200 });
     }
 
     const matchingSuggestions = Object.keys(mockSuggestions).filter((key) =>
