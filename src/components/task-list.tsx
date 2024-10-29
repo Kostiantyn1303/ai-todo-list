@@ -1,4 +1,4 @@
-import { Task } from "../../types/common";
+import { Task } from "@/types/common";
 
 export type TaskListProps = {
   tasks: Task[];
